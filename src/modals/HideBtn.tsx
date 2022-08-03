@@ -1,16 +1,26 @@
-import { styled } from '@stitches/react'
-import React, { useState } from 'react'
+import { styled } from "@stitches/react";
+import React, { useState } from "react";
 
-interface HideBtnProps {text : string} 
+interface HideBtnProps {
+  text: string;
+}
 
-export const HideBtn = ({text}: HideBtnProps) => {
-  const [hide, toggleHide] = useState(true)
+export const HideBtn = ({ text }: HideBtnProps) => {
+  const [hide, setHide] = useState(true);
 
-    const StyledHideBtn = styled("button", {
-        display: "inline"
-    })
+  const toggleHide = () => {
+    setHide((prev) => !prev);
+  };
+
+  const StyledHideBtn = styled("button", {
+    display: "inline",
+    border: "none",
+    background: "none",
+  });
 
   return (
-    <StyledHideBtn onClick={() => toggleHide}>{hide ? "[...]" : text}</StyledHideBtn>
-    )
-}
+    <StyledHideBtn onClick={() => toggleHide()}>
+      {hide ? "[...]" : text}
+    </StyledHideBtn>
+  );
+};
