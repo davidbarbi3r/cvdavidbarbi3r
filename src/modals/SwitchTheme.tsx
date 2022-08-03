@@ -30,6 +30,7 @@ const ToggleBtn = () => {
     justifyContent: "center",
     position: "absolute",
     top: "1em",
+    marginBlock: "2em"
   });
 
   return (

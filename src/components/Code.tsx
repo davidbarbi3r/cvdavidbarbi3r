@@ -1,7 +1,7 @@
 import { styled, css } from "@stitches/react";
 import { ThemeContext, LanguageContext } from "../hooks/Context";
 import { colorTheme } from "../styles/colorTheme";
-import {HideBtn} from "../modals/HideBtn"
+import { HideBtn } from "../modals/HideBtn";
 import React, { useContext } from "react";
 
 export const Code = () => {
@@ -21,6 +21,8 @@ export const Code = () => {
     padding: "1em",
     backgroundColor: theme ? colorTheme.light.console : colorTheme.dark.console,
     height: "stretch",
+    fontFamily: "Ubuntu Mono, monospace;",
+    overflow: "hidden"
   });
 
   const span = css({
@@ -38,19 +40,13 @@ export const Code = () => {
             : colorTheme.dark.curlybraces,
         },
         key: {
-          color: theme 
-            ? colorTheme.light.key
-            : colorTheme.dark.key,
+          color: theme ? colorTheme.light.key : colorTheme.dark.key,
         },
         text: {
-          color: theme 
-            ? colorTheme.light.text 
-            : colorTheme.dark.text,
+          color: theme ? colorTheme.light.text : colorTheme.dark.text,
         },
         other: {
-          color: theme 
-            ? colorTheme.light.other 
-            : colorTheme.dark.other,
+          color: theme ? colorTheme.light.other : colorTheme.dark.other,
         },
       },
     },
@@ -65,6 +61,9 @@ export const Code = () => {
   const StyledLink = styled("a", {
     color: theme ? colorTheme.light.link : colorTheme.dark.link,
   });
+
+  const hideSkills = language === "FR" ? <HideBtn text='"Analyse des données avec Power Query / Pivot / BI", "Contrôle des comptes par cycles", "Démarche d audit"' /> : <HideBtn text='"Audit approach", "Data analysis with Power Query / Pivot / BI", "Financial statement audit"'/>
+  const shownSkills = language === "FR" ? '"Analyse financière", "Encadrement des juniors & stagiaires"' : '"Financial analysis", "Training & coaching juniors and interns"'
 
   return (
     <StyledCodeContainer>
@@ -87,7 +86,9 @@ export const Code = () => {
           </span>{" "}
           : "
           <span className={span({ variant: "text" })}>
-            {language === "FR" ? "Developpeur Front-end TypeScript/React" : "Front-end TypeScript/React developer"} 
+            {language === "FR"
+              ? "Developpeur Front-end TypeScript/React"
+              : "Front-end TypeScript/React developer"}
           </span>
           ",
         </StyledLine>
@@ -147,7 +148,12 @@ export const Code = () => {
             {"\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "poste" : "job"}
           </span>{" "}
-          : <span className={span({ variant: "text" })}>{language === "FR" ? "Développeur Front-end TypeScript / React" : "Front-end TypeScript / React developer"}</span>{" "}
+          :{" "}
+          <span className={span({ variant: "text" })}>
+            {language === "FR"
+              ? "Développeur Front-end TypeScript / React"
+              : "Front-end TypeScript / React developer"}
+          </span>{" "}
           ,
         </StyledLine>
         <StyledLine>
@@ -168,8 +174,7 @@ export const Code = () => {
             {"\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "entreprise" : "firm"}
           </span>{" "}
-          : <span className={span({ variant: "text" })}>"KPMG / Anaxa"</span>{" "}
-          ,
+          : <span className={span({ variant: "text" })}>"KPMG / Anaxa"</span> ,
         </StyledLine>
         <StyledLine>
           <span className={span({ variant: "number" })}>12</span>
@@ -179,7 +184,7 @@ export const Code = () => {
           </span>{" "}
           :{" "}
           <span className={span({ variant: "text" })}>
-            {language === "FR" ? "Auditeur financier": "Financial auditor"}
+            {language === "FR" ? "Auditeur financier" : "Financial auditor"}
           </span>{" "}
           ,
         </StyledLine>
@@ -191,7 +196,7 @@ export const Code = () => {
           </span>{" "}
           : <span className={span({ variant: "curly" })}>{"[ "}</span>
           <span className={span({ variant: "text" })}>
-          {language === "FR" ? `"Analyse de processus financiers", ""Encadrement des juniors et stagiaires", ${<HideBtn text='"Analyse des données avec Power Query / Pivot / BI", "Contrôle des comptes par cycles", "Démarche d audit"'/>}`: '"Financial analysis", "Audit approach", "Data analysis with Power Query / Pivot / BI", "Financial statement audit", "Training & coaching juniors and interns"}'}
+            {shownSkills}{hideSkills} 
           </span>{" "}
           <span className={span({ variant: "curly" })}>{"] "}</span>,
         </StyledLine>
@@ -236,7 +241,9 @@ export const Code = () => {
           </span>{" "}
           : <span className={span({ variant: "curly" })}>{"[ "}</span>
           <span className={span({ variant: "text" })}>
-          {language === "FR" ? 'Organisation", "Travail en équipe", "Gestion & relationel client': '"Organization", "Teamwork", "Customer relationship management"'}
+            {language === "FR"
+              ? 'Organisation", "Travail en équipe", "Gestion & relationel client'
+              : '"Organization", "Teamwork", "Customer relationship management"'}
           </span>{" "}
           <span className={span({ variant: "curly" })}>{"] "}</span>,
         </StyledLine>

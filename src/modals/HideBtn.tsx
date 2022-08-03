@@ -1,11 +1,8 @@
 import { styled } from "@stitches/react";
 import React, { useState } from "react";
+import { colorTheme } from "../styles/colorTheme";
 
-interface HideBtnProps {
-  text: string;
-}
-
-export const HideBtn = ({ text }: HideBtnProps) => {
+export const HideBtn = (props: any) => {
   const [hide, setHide] = useState(true);
 
   const toggleHide = () => {
@@ -13,14 +10,21 @@ export const HideBtn = ({ text }: HideBtnProps) => {
   };
 
   const StyledHideBtn = styled("button", {
-    display: "inline",
+    display: hide ? "inline": "block",
     border: "none",
     background: "none",
+    color: "inherit",
+    fontSize: "inherit",
+    cursor: "pointer",
+    textAlign: "left",
+    "&:hover": {
+      fontWeight: "bold"
+    }
   });
 
   return (
     <StyledHideBtn onClick={() => toggleHide()}>
-      {hide ? "[...]" : text}
+      {hide ? "[ ... ]" :  "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0"+ props.text}
     </StyledHideBtn>
   );
 };
