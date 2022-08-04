@@ -16,7 +16,7 @@ export const Code = () => {
     width: "100%",
   });
 
-  let davidbarbier = {
+  const davidbarbier = {
     name: "David Barbier",
     job: "",
   };
@@ -33,11 +33,12 @@ export const Code = () => {
     scrollBehavior: "scroll",
     fontFamily: "Ubuntu Mono, monospace;",
     "@media(max-width: 850px)": {
-      overflowX: "clip",
+      overflowX: "scroll",
       scrollBehavior: "auto",
       height: "max-content",
       flexFlow: "nowrap",
       flexDirection: "column",
+      whiteSpace: "nowrap",
     },
   });
 
@@ -101,7 +102,7 @@ export const Code = () => {
       <StyledConsole>
         <StyledLine>
           <span className={span({ variant: "number" })}>1</span>
-          <span className={span({ variant: "key" })}>let</span>
+          <span className={span({ variant: "key" })}>const</span>
           <span className={span({ variant: "other" })}>
             {language === "FR" ? " candidat" : " applicant"}{" "}
           </span>{" "}
@@ -360,7 +361,7 @@ export const Code = () => {
           : <span className={span({ variant: "text" })}>"2022-20XX"</span> ,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>12</span>
+          <span className={span({ variant: "number" })}>30</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "poste" : "job"}
@@ -374,19 +375,19 @@ export const Code = () => {
           ,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>13</span>
+          <span className={span({ variant: "number" })}>31</span>
           <span className={span({ variant: "curly" })}>{" } "}</span>,{" "}
           <span className={span({ variant: "curly" })}>{" { "}</span>
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>14</span>
+          <span className={span({ variant: "number" })}>32</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}date
           </span>{" "}
           : <span className={span({ variant: "text" })}>"2019-2022"</span> ,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>15</span>
+          <span className={span({ variant: "number" })}>33</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "entreprise" : "firm"}
@@ -394,7 +395,7 @@ export const Code = () => {
           : <span className={span({ variant: "text" })}>"KPMG / Anaxa"</span> ,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>16</span>
+          <span className={span({ variant: "number" })}>34</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "poste" : "job"}
@@ -406,7 +407,7 @@ export const Code = () => {
           ,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>17</span>
+          <span className={span({ variant: "number" })}>35</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "compétences" : "skills"}
@@ -419,19 +420,19 @@ export const Code = () => {
           <span className={span({ variant: "curly" })}>{"] "}</span>,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>18</span>
+          <span className={span({ variant: "number" })}>36</span>
           <span className={span({ variant: "curly" })}>{" } "}</span>,{" "}
           <span className={span({ variant: "curly" })}>{" { "}</span>
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>19</span>
+          <span className={span({ variant: "number" })}>37</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}date
           </span>{" "}
           : <span className={span({ variant: "text" })}>"2015-2019"</span> ,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>20</span>
+          <span className={span({ variant: "number" })}>38</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "entreprise" : "firm"}
@@ -440,7 +441,7 @@ export const Code = () => {
           ,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>21</span>
+          <span className={span({ variant: "number" })}>39</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "poste" : "job"}
@@ -452,7 +453,7 @@ export const Code = () => {
           ,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>22</span>
+          <span className={span({ variant: "number" })}>40</span>
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0"}
             {language === "FR" ? "compétences" : "skills"}
@@ -466,15 +467,30 @@ export const Code = () => {
           <span className={span({ variant: "curly" })}>{"] "}</span>,
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>23</span>
+          <span className={span({ variant: "number" })}>41</span>
           <span className={span({ variant: "curly" })}>{" }] "}</span>
           {","}
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>24</span>
+          <span className={span({ variant: "number" })}>42</span>
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>10</span>
+          <span className={span({ variant: "number" })}>43</span>
+          <span className={span({ variant: "key" })}>
+            {language === "FR" ? " passions " : " hobbies "}
+          </span>
+          {" : "}
+          <span className={span({ variant: "curly" })}>[ </span>
+          <span className={span({ variant: "text" })}>
+            {language === "FR"
+              ? '"Escalade", "VTT", "Blockchain", "Finance", "Photographie"'
+              : '"Climbing", "MTB", "Blockchain", "Finance", "Photography"'}
+          </span>
+          <span className={span({ variant: "curly" })}>{" ] "}</span>
+          {","}
+        </StyledLine>
+        <StyledLine>
+          <span className={span({ variant: "number" })}>44</span>
           <span className={span({ variant: "key" })}>
             {language === "FR" ? " réseaux " : " socials "}
           </span>
@@ -500,7 +516,7 @@ export const Code = () => {
           {","}
         </StyledLine>
         <StyledLine>
-          <span className={span({ variant: "number" })}>23</span>
+          <span className={span({ variant: "number" })}>45</span>
           <span className={span({ variant: "curly" })}>{"} "}</span>
         </StyledLine>
       </StyledConsole>

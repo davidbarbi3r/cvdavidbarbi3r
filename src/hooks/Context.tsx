@@ -20,11 +20,10 @@ const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 const LanguageContext = createContext<ILanguageContext>({} as ILanguageContext);
 
 const ThemeContextProvider = (props: ContextProviderProps) => {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(false);
 
   function toggleTheme() {
     setTheme((prev) => !prev);
-    console.log(theme);
   }
 
   return (

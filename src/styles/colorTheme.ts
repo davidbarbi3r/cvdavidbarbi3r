@@ -7,7 +7,7 @@ export const colorTheme = {
     text: "#2AA198",
     link: "#46D1C7",
     title: "#272822",
-    console: "#EAE3D2",
+    console: "white",
     other: "#D36DAA"
   },
   dark: {
