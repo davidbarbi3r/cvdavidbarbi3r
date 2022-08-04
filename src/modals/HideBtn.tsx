@@ -10,7 +10,7 @@ export const HideBtn = (props: any) => {
   };
 
   const StyledHideBtn = styled("button", {
-    display: hide ? "inline": "block",
+    display: "inline",
     border: "none",
     background: "none",
     color: "inherit",

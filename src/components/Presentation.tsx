@@ -10,7 +10,6 @@ export const Presentation = () => {
     const {language} = useContext(LanguageContext);
 
     const MainContainer = styled("div", {
-        position: "fixed",
         display: "flex",
         height: "100vh",
         width: "100%",
@@ -18,7 +17,9 @@ export const Presentation = () => {
         alignItems: "center",
         backgroundColor: theme ? colorTheme.light.background : colorTheme.dark.background,
         "@media(max-width: 850px)": {
-            flexDirection: "column",
+            flexFlow: "column",
+            overflow: "scroll",
+            position: "fixed"
         }
     })
 

@@ -3,6 +3,7 @@ import { colorTheme } from "../styles/colorTheme";
 import React, { useContext } from "react";
 import { keyframes, styled } from "@stitches/react";
 import { ToggleBtn } from "../modals/SwitchTheme";
+import david from "../assets/DSCF7007Lowdef.jpg"
 
 export const Title = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -19,6 +20,7 @@ export const Title = () => {
     borderRight: "1px solid black",
     "@media(max-width: 850px)": {
         width: "100%",
+        height: "500px"
     }
   });
   
@@ -32,22 +34,23 @@ export const Title = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    fontSize:"2.2rem",
     "& span" : {
       animation: `${rotate} 4s`,
     }
   });
 
-  const StyledIcon = styled("button", {
-        width: "fit-content",
-        display: "flex", 
-        alignItems: "center",
-        backgroundColor: theme ? colorTheme.light.numbers : colorTheme.dark.numbers
+  const StyledImg = styled("img", {
+    width: "230px",
+    borderRadius: "10px",
+    margin: "6.5em 0 2em 0",
+    border: "1px solid black"
   })
 
   return (
     <TitleContainer>
         <ToggleBtn></ToggleBtn>
-        {/* <img src="moi.jpg" alt="moi en image"></img> */}
+        <StyledImg src={david} alt={language === "FR" ? "Photo de profil":"Profil picture"}></StyledImg>
         <StyledTitle>David Barbi<span>3</span>r</StyledTitle>
     </TitleContainer>)
 };
