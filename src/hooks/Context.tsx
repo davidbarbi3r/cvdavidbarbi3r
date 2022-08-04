@@ -9,7 +9,7 @@ export type TLanguage = "FR" | "EN";
 
 interface ILanguageContext {
   language: string;
-  toggleLanguage: React.Dispatch<React.SetStateAction<string>>;
+  toggleLanguage: () => void
 }
 
 type ContextProviderProps = {
