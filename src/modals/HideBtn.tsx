@@ -18,13 +18,15 @@ export const HideBtn = (props: any) => {
     cursor: "pointer",
     textAlign: "left",
     "&:hover": {
-      fontWeight: "bold"
-    }
+      fontWeight: "bold",
+    },
   });
 
   return (
     <StyledHideBtn onClick={() => toggleHide()}>
-      {hide ? "[ ... ]" :  "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0"+ props.text}
+      {hide
+        ? "[ ... ]"
+        : "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0" + props.text}
     </StyledHideBtn>
   );
 };

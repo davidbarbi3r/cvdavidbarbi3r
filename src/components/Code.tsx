@@ -16,11 +16,6 @@ export const Code = () => {
     width: "100%",
   });
 
-  const davidbarbier = {
-    name: "David Barbier",
-    job: "",
-  };
-
   const StyledConsole = styled("section", {
     display: "flex",
     flexDirection: "column",
@@ -95,7 +90,7 @@ export const Code = () => {
   const shownSkills =
     language === "FR"
       ? '"Analyse financière", "Encadrement des juniors & stagiaires",'
-      : '"Financial analysis", "Training & coaching juniors and interns"';
+      : '"Financial analysis", "Training & coaching juniors and interns",';
 
   return (
     <StyledCodeContainer>
@@ -244,7 +239,7 @@ export const Code = () => {
           <span className={span({ variant: "other" })}>
             {"\u00a0\u00a0\u00a0\u00a0\u00a0tech"}
           </span>{" "}
-          :{" "}
+          {" "}
           <span className={span({ variant: "text" })}>
             {" "}
             : <span className={span({ variant: "curly" })}>{"[ "}</span>
@@ -461,7 +456,7 @@ export const Code = () => {
           : <span className={span({ variant: "curly" })}>{"[ "}</span>
           <span className={span({ variant: "text" })}>
             {language === "FR"
-              ? 'Organisation", "Travail en équipe", "Gestion & relationel client"'
+              ? '"Organisation", "Travail en équipe", "Gestion & relationel client"'
               : '"Organization", "Teamwork", "Customer relationship management"'}
           </span>{" "}
           <span className={span({ variant: "curly" })}>{"] "}</span>,

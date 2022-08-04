@@ -9,7 +9,7 @@ export type TLanguage = "FR" | "EN";
 
 interface ILanguageContext {
   language: string;
-  toggleLanguage: () => void
+  toggleLanguage: () => void;
 }
 
 type ContextProviderProps = {
